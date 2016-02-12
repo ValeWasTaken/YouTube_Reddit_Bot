@@ -8,7 +8,7 @@ import praw
 
 
 r = praw.Reddit(
-    user_agent='YouTube Reddit Bot - Version 1.0.1'
+    user_agent='YouTube Reddit Bot - Version 1.0.2'
                'Created by /u/Valestrum AKA /u/Killmail_Bot'
                'Designed to find comments with YouTube links and '
                'reply to the links with the title and length of the video.')
@@ -51,7 +51,7 @@ def run_bot():
     with open('cache.txt','r') as cache:
         existing = cache.read().splitlines()
         
-    comments = subreddit.get_comments(limit=150)
+    comments = subreddit.get_comments(limit=200)
 
     with open('cache.txt', 'a+') as cache:
         for comment in comments:
@@ -78,4 +78,4 @@ while True:
         print(e)
     loop_count += 1
     print("Program loop #{0} completed successfully.".format(loop_count))
-    time.sleep(900) # Once every 15 minutes.
+    time.sleep(300) # Once every 5 minutes.
