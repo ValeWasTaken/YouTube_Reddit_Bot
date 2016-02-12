@@ -8,7 +8,7 @@ import praw
 
 
 r = praw.Reddit(
-    user_agent='YouTube Reddit Bot - Version 1.0.0'
+    user_agent='YouTube Reddit Bot - Version 1.0.1'
                'Created by /u/Valestrum AKA /u/Killmail_Bot'
                'Designed to find comments with YouTube links and '
                'reply to the links with the title and length of the video.')
@@ -18,7 +18,7 @@ subreddit = r.get_subreddit('test')
 loop_count = 0
 
 
-# Catch debug, warnings, and errors.
+# Catch debug, warnings, and errors for youtube_dl.
 class MyLogger(object):
     def debug(self, msg):
         pass
@@ -39,19 +39,15 @@ def scrape_info(links):
         for link in links:
             info = ydl.extract_info(link, download=False)
             title = info['title']
-            
             seconds = info['duration']
-            m, s = divmod(seconds, 60)
-            h, m = divmod(m, 60)
-            duration = '{0}:{1}:{2}'.format(h, m, s)
-                
+            duration = time.strftime('%H:%M:%S', time.gmtime(seconds))
             reply = '>"{0}" - Length: {1}'.format(title, duration)
             output.append(reply)
     return '\n\n'.join(output)
 
 
 def run_bot():
-    #Check existing comment ids.
+    # Check existing comment ids.
     with open('cache.txt','r') as cache:
         existing = cache.read().splitlines()
         
