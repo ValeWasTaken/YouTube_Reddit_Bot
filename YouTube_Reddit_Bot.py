@@ -8,7 +8,7 @@ import praw
 
 
 r = praw.Reddit(
-    user_agent='YouTube Reddit Bot - Version 1.0.2'
+    user_agent='YouTube Reddit Bot - Version 1.0.3'
                'Created by /u/Valestrum AKA /u/Killmail_Bot'
                'Designed to find comments with YouTube links and '
                'reply to the links with the title and length of the video.')
@@ -78,4 +78,4 @@ while True:
         print(e)
     loop_count += 1
     print("Program loop #{0} completed successfully.".format(loop_count))
-    time.sleep(300) # Once every 5 minutes.
+    time.sleep(120) # Once every 2 minutes.
