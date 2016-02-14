@@ -3,6 +3,6 @@ A Reddit bot dedicated to finding YouTube links and posting the title and video 
 
 Example picture:
 
-<img src="http://i.imgur.com/CdjwxXY.png"></img>
+<img src="http://i.imgur.com/3unUzck.png"></img>
 
 To send a suggestion or to see more examples please look here: https://reddit.com/u/yt_reddit_bot
