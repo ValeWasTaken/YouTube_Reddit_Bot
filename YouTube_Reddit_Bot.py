@@ -1,14 +1,14 @@
 # Python 3.4
-from __future__ import unicode_literals
-import youtube_dl
-import re
-import requests
-import time
-import praw
+from __future__ import unicode_literals # Support unicode in video titles.
+import youtube_dl   # Grab YouTube video information.
+import re           # Parse data
+import requests     # Handle exceptions
+import time         # Enable timed looping
+import praw         # Reddit interaction
 
 
 r = praw.Reddit(
-    user_agent='YouTube Reddit Bot - Version 1.0.5'
+    user_agent='YouTube Reddit Bot - Version 1.0.6'
                'Created by /u/Valestrum AKA /u/Killmail_Bot'
                'Designed to find comments with YouTube links and '
                'reply to the links with the title and length of the video.')
