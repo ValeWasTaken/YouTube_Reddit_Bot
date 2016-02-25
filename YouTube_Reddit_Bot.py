@@ -14,7 +14,7 @@ r = praw.Reddit(
                'reply to the links with the title and length of the video.')
 username, password = [line.rstrip('\n') for line in open('user_info.txt')]
 r.login(username, password)
-subreddit = r.get_subreddit('all')
+subreddit = r.get_subreddit('test') # Change this to 'all' to use it for all of Reddit.
 loop_count = 0
 
 
