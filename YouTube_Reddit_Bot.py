@@ -75,7 +75,7 @@ while True:
     try:
         run_bot()
     except Exception as e:
-        print(e)
+        print(e) # Also worth considering to write this to an error log instead.
     loop_count += 1
     print("Program loop #{0} completed successfully.".format(loop_count))
     time.sleep(140) # Loop once every 140 seconds.
