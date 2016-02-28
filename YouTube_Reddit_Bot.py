@@ -8,7 +8,7 @@ import praw         # Reddit interaction
 
 
 r = praw.Reddit(
-    user_agent='YouTube Reddit Bot - Version 1.1.1'
+    user_agent='YouTube Reddit Bot - Version 1.1.0'
                'Created by /u/Valestrum AKA /u/Killmail_Bot'
                'Designed to find comments with YouTube links and '
                'reply to the links with the title and length of the video.')
@@ -38,8 +38,7 @@ def scrape_info(links):
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         for link in links:
             info = ydl.extract_info(link, download=False)
-            title = info['title'] # Title without hyperlink (Which seems to be preferred?)
-            #title = "[{0}]({1})".format(info['title'], link) # Used for hyperlinking title
+            title = "[{0}]({1})".format(info['title'], link)
             seconds = info['duration']
             duration = time.strftime('%H:%M:%S', time.gmtime(seconds))
             reply = '>"{0}" - Length: {1}'.format(title, duration)
