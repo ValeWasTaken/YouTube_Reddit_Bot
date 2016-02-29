@@ -8,7 +8,7 @@ import praw         # Reddit interaction
 
 
 r = praw.Reddit(
-    user_agent='YouTube Reddit Bot - Version 1.1.0'
+    user_agent='YouTube Reddit Bot - Version 1.1.2'
                'Created by /u/Valestrum AKA /u/Killmail_Bot'
                'Designed to find comments with YouTube links and '
                'reply to the links with the title and length of the video.')
@@ -75,7 +75,8 @@ while True:
     try:
         run_bot()
     except Exception as e:
-        print(e) # Also worth considering to write this to an error log instead.
+        with open('ytrb_error_log.txt', 'a+') as error_log:
+            error_log.write(e + '\n')
     loop_count += 1
     print("Program loop #{0} completed successfully.".format(loop_count))
     time.sleep(140) # Loop once every 140 seconds.
