@@ -61,8 +61,7 @@ def run_bot():
                 item for item in comment_text.split()
                 if re.match(r'https://www\.youtube\.com/watch\?v=.*', item)]
 
-            # Check that comment hasn't been seen before and that
-            # it meets the desired critera.
+            # Check that comment has link(s) and hasn't been seen yet.
             if links and comment.id not in existing:
                     existing.append(comment.id)
                     cache.write(comment.id + '\n')
