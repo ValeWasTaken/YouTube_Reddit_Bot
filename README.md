@@ -1,4 +1,7 @@
 # YouTube_Reddit_Bot
+
+<h3>-!- Project discontinued March 16th 2016 -!-</h3>
+
 A Reddit bot dedicated to finding YouTube links and posting the title and video length of each link.
 
 Example picture:
